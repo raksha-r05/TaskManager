@@ -6,7 +6,7 @@ from starlette.templating import Jinja2Templates
 
 
 router = APIRouter()
-templates = Jinja2Templates(directory="app/templates")
+templates = Jinja2Templates(directory="backend/app/templates")
 
 
 @router.get("/", response_class=HTMLResponse)

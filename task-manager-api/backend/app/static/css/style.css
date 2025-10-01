@@ -1,6 +1,164 @@
+/* Existing styles... */
 body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;margin:0;padding:0;background:#0b1020;color:#e8eefc}
 header{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:#121939;border-bottom:1px solid #243056}
 header a{color:#aecdff;margin-left:12px;text-decoration:none}
 main{padding:20px}
 
+/* New styles for task management */
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary { background: #3b82f6; color: white; }
+.btn-secondary { background: #6b7280; color: white; }
+.btn-success { background: #10b981; color: white; }
+.btn-danger { background: #ef4444; color: white; }
+.btn-sm { padding: 4px 8px; font-size: 12px; }
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #1e293b;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover { color: #fff; }
+
+/* Form styles */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 4px;
+  color: #e2e8f0;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #475569;
+  border-radius: 4px;
+  background: #334155;
+  color: #e2e8f0;
+  box-sizing: border-box;
+}
+
+.form-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* Task card styles */
+.task-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.task-card.completed {
+  opacity: 0.7;
+  background: #1f2937;
+}
+
+.task-card.completed .task-title {
+  text-decoration: line-through;
+}
+
+.task-content {
+  flex: 1;
+}
+
+.task-title {
+  margin: 0 0 8px 0;
+  color: #f1f5f9;
+}
+
+.task-description {
+  margin: 0 0 8px 0;
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+.task-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.priority-0 { color: #10b981; }
+.priority-1 { color: #f59e0b; }
+.priority-2 { color: #ef4444; }
+
+.task-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.empty-state {
+  text-align: center;
+  color: #64748b;
+  padding: 40px;
+  font-style: italic;
+}
+
+.error {
+  color: #ef4444;
+  text-align: center;
+  padding: 20px;
+}
+
+#tasks-loading {
+  text-align: center;
+  color: #64748b;
+  padding: 20px;
+}

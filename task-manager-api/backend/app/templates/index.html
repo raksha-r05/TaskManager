@@ -1,9 +1,50 @@
 {% extends "base.html" %}
 {% block content %}
   <section>
-    <h2>Your Tasks</h2>
-    <div id="tasks"></div>
+    <div class="task-header">
+      <h2>Your Tasks</h2>
+      <button id="add-task-btn" class="btn btn-primary">+ Add Task</button>
+    </div>
+    
+    <!-- Task Form Modal -->
+    <div id="task-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 id="modal-title">Add New Task</h3>
+        <form id="task-form">
+          <input type="hidden" id="task-id" name="id">
+          <div class="form-group">
+            <label for="title">Title *</label>
+            <input type="text" id="title" name="title" required>
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="priority">Priority</label>
+            <select id="priority" name="priority">
+              <option value="0">Low</option>
+              <option value="1">Medium</option>
+              <option value="2">High</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="due-date">Due Date</label>
+            <input type="datetime-local" id="due-date" name="due_date">
+          </div>
+          <div class="form-actions">
+            <button type="button" id="cancel-btn" class="btn btn-secondary">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save Task</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Tasks Container -->
+    <div id="tasks-container">
+      <div id="tasks-loading">Loading tasks...</div>
+      <div id="tasks-list"></div>
+    </div>
   </section>
 {% endblock %}
-
-
