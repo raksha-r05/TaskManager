@@ -5,6 +5,33 @@ header a{color:#aecdff;margin-left:12px;text-decoration:none}
 main{padding:20px}
 
 /* New styles for task management */
+.paper-sheet {
+  max-width: 720px;
+  margin: 24px auto;
+  background: #fdfcf7;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  padding: 20px 24px;
+  background-image: linear-gradient(#fdfcf7 24px, #f1f5f9 25px);
+  background-size: 100% 25px;
+}
+
+.paper-sheet .task-card,
+.paper-sheet .modal-content,
+.paper-sheet .form-group input,
+.paper-sheet .form-group textarea,
+.paper-sheet .form-group select {
+  background: white;
+  color: #111827;
+  border-color: #e5e7eb;
+}
+
+.paper-sheet .task-title { color: #111827; }
+.paper-sheet .task-description { color: #374151; }
+.paper-sheet .task-meta { color: #6b7280; }
+
 .task-header {
   display: flex;
   justify-content: space-between;
@@ -110,6 +137,8 @@ main{padding:20px}
 
 .task-card.completed .task-title {
   text-decoration: line-through;
+  text-decoration-color: #dc2626;
+  color: #b91c1c;
 }
 
 .task-content {

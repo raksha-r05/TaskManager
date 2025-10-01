@@ -85,23 +85,17 @@ function renderTasks() {
   }
   
   tasksContainer.innerHTML = tasks.map(task => `
-    <div class="task-card ${task.is_completed ? 'completed' : ''}">
+    <div class="task-card ${task.is_completed ? 'completed' : ''}" onclick="editTask(${task.id})">
       <div class="task-content">
         <h3 class="task-title">${escapeHtml(task.title)}</h3>
-        ${task.description ? `<p class="task-description">${escapeHtml(task.description)}</p>` : ''}
-        <div class="task-meta">
-          <span class="priority priority-${task.priority}">Priority: ${getPriorityText(task.priority)}</span>
-          ${task.due_date ? `<span class="due-date">Due: ${formatDate(task.due_date)}</span>` : ''}
-          <span class="created-date">Created: ${formatDate(task.created_at)}</span>
-        </div>
       </div>
       <div class="task-actions">
         <button class="btn btn-sm ${task.is_completed ? 'btn-secondary' : 'btn-success'}" 
-                onclick="toggleTask(${task.id}, ${!task.is_completed})">
+                onclick="event.stopPropagation(); toggleTask(${task.id}, ${!task.is_completed})">
           ${task.is_completed ? 'Undo' : 'Complete'}
         </button>
-        <button class="btn btn-sm btn-primary" onclick="editTask(${task.id})">Edit</button>
-        <button class="btn btn-sm btn-danger" onclick="deleteTaskConfirm(${task.id})">Delete</button>
+        <button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); editTask(${task.id})">Edit</button>
+        <button class="btn btn-sm btn-danger" onclick="event.stopPropagation(); deleteTaskConfirm(${task.id})">Delete</button>
       </div>
     </div>
   `).join('');
